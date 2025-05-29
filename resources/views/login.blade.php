@@ -50,9 +50,12 @@
             <label for="password" class="form-label fw-bold">Kata Sandi</label>
             <input type="password" class="form-control" id="password" placeholder="isi disini">
           </div>
-          <button type="submit" class="btn login-btn w-100">Log In</button>
-        <form action="{{ url('/chatbot') }}" method="GET">
-          Belum memiliki akun? <a href="#">Daftar</a>
+          <button type="submit" class="btn login-btn w-100">
+              <a href="/chatbot">Log In</a>
+          </button>
+        <form>
+        <div class="bottom-text text-center mt-3">
+          Belum memiliki akun? <a href="/register">Daftar</a>
         </div>
       </div>
     </div>
