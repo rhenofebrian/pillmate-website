@@ -71,10 +71,10 @@
       <img src="pillmate-icon.png" alt="Pillmate Logo" height="40" />
     </div>
     <nav class="d-flex gap-4">
-      <a href="#" class="nav-link">Chatbot</a>
-      <a href="#" class="nav-link">Tambah Obat</a>
-      <a href="#" class="nav-link">Riwayat</a>
-      <a href="#" class="nav-link active">Profil</a>
+      <a href="/chatbot" class="nav-link active">Chatbot</a>
+      <a href="/tambahObat" class="nav-link">Tambah Obat</a>
+      <a href="/riwayat" class="nav-link">Riwayat</a>
+      <a href="/profil" class="nav-link">Profil</a>
     </nav>
     <div class="d-flex align-items-center gap-2 fw-bold text-warning">
       <span>Nadiela</span>
