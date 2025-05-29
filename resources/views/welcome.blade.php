@@ -13,8 +13,8 @@
                 <img src="{{ asset('web-icon/pillmate-icon.png') }}" alt="Logo" width="70" height="70" class="d-inline-block align-text-top">
             </a>
             <div class="d-flex gap-4" role="search">
-                <button type="button" class="btn btn-light">Login</button>
-                <button type="button" class="btn btn-warning">Register</button>
+                <a href="/login" class="btn btn-light">Login</a>
+                <a href="/register" class="btn btn-warning">Register</a>
                 </div>
             </div>
         </nav>
