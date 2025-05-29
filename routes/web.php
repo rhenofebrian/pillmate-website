@@ -25,3 +25,7 @@ Route::get('/riwayat', function () {
 Route::get('/profil', function () {
     return view('profil');
 })->name('profil');
+
+Route::get('/register', function () {
+    return view('register');
+})->name('register');

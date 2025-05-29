@@ -55,7 +55,7 @@
           </button>
         <form>
         <div class="bottom-text text-center mt-3">
-          Belum memiliki akun? <a href="#">Daftar</a>
+          Belum memiliki akun? <a href="/register">Daftar</a>
         </div>
       </div>
     </div>
