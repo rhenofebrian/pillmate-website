@@ -13,11 +13,11 @@
                 <img src="{{ asset('web-icon/pillmate-icon.png') }}" alt="Logo" width="70" height="70" class="d-inline-block align-text-top">
             </a>
             <div class="d-flex gap-4" role="search">
-                <a href="/login" class="btn btn-light">Login</a>
-                <a href="/register" class="btn btn-warning">Register</a>
-                </div>
+                <a href="{{ route('login') }}" class="btn btn-light">Login</a>
+                <a href="{{ route('register') }}" class="btn btn-warning">Register</a>
             </div>
-        </nav>
+        </div>
+    </nav>
     <div class="px-5">
         <!-- Hero Section -->
         <div class="row g-4 align-items-center text-start">
