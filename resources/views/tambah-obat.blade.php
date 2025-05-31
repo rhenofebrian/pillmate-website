@@ -68,24 +68,42 @@
                             <label class="form-label fw-medium">
                                 Dosis
                             </label>
-                            <div class="d-flex align-items-center gap-2">
-                                <input 
-                                    name="dosis"
-                                    type="text" 
-                                    class="form-control border-warning" 
-                                    placeholder="1/2/3/..." 
-                                    style="max-width: 100px; border-color: #ffc107 !important;"
-                                >
-                                <span class="text-muted">kali</span>
-                                <span class="text-warning mx-2" style="font-size: 1.2em;">×</span>
-                                <input 
-                                    name="durasi"
-                                    type="text" 
-                                    class="form-control border-warning" 
-                                    placeholder="1/2/3/..." 
-                                    style="max-width: 100px; border-color: #ffc107 !important;"
-                                >
-                                <span class="text-muted">hari</span>
+
+                            <!-- Input dosis khusus Sirup -->
+                            <div id="sirupDoseContainer" class="mb-3" style="display: none;">
+                                <div class="d-flex align-items-center gap-2">
+                                    <input 
+                                        name="dosis_sirup_ml"
+                                        type="text" 
+                                        class="form-control border-warning" 
+                                        placeholder="1/2/3/..."
+                                        style="max-width: 100px; border-color: #ffc107 !important;"
+                                    >
+                                    <span class="text-muted">ml x sekali</span>
+                                </div>
+                            </div>
+
+                            <!-- Input dosis dan durasi biasa -->
+                            <div id="regularDoseContainer">
+                                <div class="d-flex align-items-center gap-2">
+                                    <input 
+                                        name="dosis"
+                                        type="text" 
+                                        class="form-control border-warning" 
+                                        placeholder="1/2/3/..." 
+                                        style="max-width: 100px; border-color: #ffc107 !important;"
+                                    >
+                                    <span class="text-muted">kali</span>
+                                    <span class="text-warning mx-2" style="font-size: 1.2em;">×</span>
+                                    <input 
+                                        name="durasi"
+                                        type="text" 
+                                        class="form-control border-warning" 
+                                        placeholder="1/2/3/..." 
+                                        style="max-width: 100px; border-color: #ffc107 !important;"
+                                    >
+                                    <span class="text-muted">hari</span>
+                                </div>
                             </div>
                         </div>
 
@@ -105,12 +123,15 @@
     document.addEventListener('DOMContentLoaded', function() {
         const medicationType = document.getElementById('medicationType');
         const unitLabel = document.getElementById('unitLabel');
+        const sirupDoseContainer = document.getElementById('sirupDoseContainer');
 
         function updateUnitLabel() {
             if (medicationType.value === 'Sirup') {
                 unitLabel.textContent = 'ml';
+                sirupDoseContainer.style.display = 'block';
             } else {
                 unitLabel.textContent = 'buah';
+                sirupDoseContainer.style.display = 'none';
             }
         }
         updateUnitLabel();
