@@ -44,7 +44,7 @@
               <label>Konfirmasi Password:</label>
               <input type="password" name="password_confirmation" class="form-control" required>
           </div>
-          <button type="submit" class="btn btn-warning w-100">Register</button>
+          <button type="submit" id="registerBtn" class="btn btn-warning w-100">Register</button>
         </form>
         
         <div class="text-center mt-3">
@@ -53,5 +53,14 @@
       </div>
     </div>
   </div>
+  <script>
+    const form = document.querySelector('form');
+    const loginBtn = document.getElementById('registerBtn');
+
+    form.addEventListener('submit', function() {
+      loginBtn.disabled = true;
+      loginBtn.innerText = 'membuat akun...';
+    });
+  </script>
 </body>
 </html>

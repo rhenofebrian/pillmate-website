@@ -49,13 +49,11 @@ class AuthController extends Controller
 
         $user = User::where('email', $request->email)->first();
 
-        if (!$user) {
-            return back()->withErrors(['email' => 'Email tidak ditemukan'])->onlyInput('email');
-        }
-
-        if (!Hash::check($request->password, $user->password)) {
-            return back()->withErrors(['password' => 'Password salah'])->onlyInput('email');
-        }
+        if (!$user || !Hash::check($request->password, $user->password)) {
+        return back()->withErrors([
+            'email' => 'Email atau password salah',
+        ])->onlyInput('email');
+    }
 
         Auth::login($user);
 
@@ -93,13 +91,11 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        if(!Auth::check()){
-            return response()->json(['message'=>'user not authenticated'], 401);
-        }
-        $user = Auth::user();
-        
-        $user->delete();
+        Auth::logout(); 
 
-        return redirect()->route('login.form')->with('success','Profil berhasil diperbarui');
+        $request->session()->invalidate(); 
+        $request->session()->regenerateToken(); 
+
+        return redirect()->route('login.form')->with('success', 'Anda berhasil logout');
     }
 }

@@ -41,7 +41,7 @@
               <input type="password" class="form-control" id="password" name="password" placeholder="isi di sini" required>
               @error('password') <small class="text-danger">{{ $message }}</small> @enderror
             </div>
-            <button type="submit" class="btn login-btn btn-warning w-100">Log In</button>
+            <button type="submit" id="loginBtn" class="btn login-btn btn-warning w-100">Log In</button>
           </form>
   
           <div class="bottom-text text-center mt-3">
@@ -51,5 +51,14 @@
       </div>
     </div>
   </div>
+  <script>
+    const form = document.querySelector('form');
+    const loginBtn = document.getElementById('loginBtn');
+
+    form.addEventListener('submit', function() {
+      loginBtn.disabled = true;
+      loginBtn.innerText = 'Sedang memuat data...';
+    });
+  </script>
 </body>
 </html>

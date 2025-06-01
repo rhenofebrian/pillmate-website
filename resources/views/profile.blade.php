@@ -41,12 +41,14 @@
                     <input type="password" class="form-control" id="password" value="********" disabled>
                 </div>
 
-                <button type="button" id="edit-btn" class="btn btn-primary">Edit</button>
-                <button type="submit" id="save-btn" class="btn btn-success d-none">Simpan Perubahan</button>
+                <div class="d-flex justify-around gap-2">
+                    <button type="button" id="edit-btn" class="btn btn-primary">Edit</button>
+                    <button type="submit" id="save-btn" class="btn btn-success d-none">Simpan Perubahan</button>
+                    <button type="button" class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Logout
+                    </button>
+                </div>
             </form>
-            <button type="button" class="btn btn-danger mt-3" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                Logout
-            </button>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
             </form>
